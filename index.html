@@ -1,13 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css" />
-  <title>Document</title>
-</head>
-<body>
-  <div>test</div>
-  <script src="./dist/app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>RSA Cipher</title>
+  </head>
+  <body>
+    <div class="header">RSA Cipher</div>
+    <h1>"Prime time"</h1>
+    <img src="./assets/rsa-creators.png" alt="RSA-creators" id="rsa-creators" />
+    <div class="layout">
+      <div class="box">
+        <div class="key-section">
+          <h2>Key Pair</h2>
+          <button id="generate-keys">Generate Keys</button>
+          <div class="key-display">
+            <div>
+              <h3>Public Key (n, e):</h>
+                <p id="public-key"></p>
+            </div>
+            <div>
+              <h3>Private Key (n, d):</h3>
+              <p id="private-key"></p>
+            </div>
+          </div>
+        </div>
+
+        <div class="inputs">
+          <div class="inputs-subclass">
+            <div>
+              <h2>Encrypt/Decrypt</h2>
+              <p>Text:</p>
+              <textarea
+                id="text-input"
+                placeholder="Enter text here"
+              ></textarea>
+              <div id="key-inputs">
+                <h3>Encryption Key</h3>
+                  <p for="encryption-n">n:</p>
+                  <input type="text" id="encryption-n" placeholder="Enter n" />
+                  <p for="encryption-e">e:</p>
+                  <input type="text" id="encryption-e" placeholder="Enter e" />
+                <h3>Decryption Key</h3>
+                  <p for="decryption-n">n:</p>
+                  <input type="text" id="decryption-n" placeholder="Enter n" />
+                  <p for="decryption-d">d:</p>
+                  <input type="text" id="decryption-d" placeholder="Enter d" />
+              </div>
+            </div>
+
+            <div class="toggle">
+              <div>
+                <label for="encrypt-decrypt-toggle">Mode:</label>
+                <select id="encrypt-decrypt-toggle">
+                  <option value="encrypt">Encrypt</option>
+                  <option value="decrypt">Decrypt</option>
+                </select>
+              </div>
+              <button id="process-button">Process</button>
+            </div>
+            <h3>Result</h3>
+            <textarea
+              id="output"
+              placeholder="Result will appear here..."
+              readonly
+            ></textarea>
+          </div>
+          <div></div>
+          <div class="control-buttons">
+            <button id="example-button">Example</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./dist/app.js"></script>
+  </body>
 </html>
